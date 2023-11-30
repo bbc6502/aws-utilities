@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aws-utilities"
+version = "0.0.1"
+authors = [
+    { name = "David Johnston" , email = "c0d3@gpobox.net" }
+]
+description = "AWS utilities"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Natural Language :: English",
+    "Topic :: Utilities"
+]
+dependencies = [
+    "botocore",
+    "boto3"
+]
+
+[project.scripts]
+aws-assume-role = "awsassumerole.app:main"
