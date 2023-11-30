@@ -4,7 +4,7 @@ Utilities for AWS
 
 ## Installation ##
 
-    pip install aws-utilities
+    pip3 install --upgrade https://github.com/bbc6502/aws-utilities/archive/refs/heads/main.zip
 
 ## aws-assume-role ##
 
