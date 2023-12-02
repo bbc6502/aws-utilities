@@ -1,3 +1,4 @@
+import os
 from argparse import ArgumentParser
 
 import boto3
@@ -5,8 +6,8 @@ import boto3
 
 def main():
     parser = ArgumentParser(description='AWS assume role')
-    parser.add_argument('--profile', help='AWS profile', required=True)
-    parser.add_argument('--region', help='AWS region', default='ap-southeast-2')
+    parser.add_argument('--profile', help='AWS profile', default=os.getenv('AWS_PROFILE', 'default'))
+    parser.add_argument('--region', help='AWS region', default=os.getenv('AWS_REGION', 'ap-southeast-2'))
     parser.add_argument('--role', help='AWS role to assume', required=True)
     parser.add_argument('--name', help='AWS role session name', default='assumed')
     args = parser.parse_args()

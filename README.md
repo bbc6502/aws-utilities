@@ -10,4 +10,14 @@ Utilities for AWS
 
 Assume an AWS role using the credentials in the specified profile
 
-    $(aws-assume-role --profile default --role role_to_assume | grep export)
+    AWS_PROFILE=default
+    AWS_REGION=ap-southeast-2
+    $(aws-assume-role --role role_to_assume | grep export)
+
+## aws-move-messages ##
+
+Move AWS SQS messages from one queue to another queue
+
+    AWS_PROFILE=default
+    AWS_REGION=ap-southeast-2
+    aws-move-messages -s https://sqs.aws.com/source-queue -t https://sqs.aws.com/target-queue

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aws-utilities"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
     { name = "David Johnston" , email = "c0d3@gpobox.net" }
 ]
@@ -24,5 +24,12 @@ dependencies = [
     "boto3"
 ]
 
+[tool.setuptools]
+packages = [
+    "awsassumerole",
+    "awsmovemessages"
+]
+
 [project.scripts]
 aws-assume-role = "awsassumerole.app:main"
+aws-move-messages = "awsmovemessages.app:main"
